@@ -1,0 +1,20 @@
+<title>Neu Pathee Partner</title>
+<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+<script>
+  liff.init(
+    data => {
+      // Now you can call LIFF API
+      const userId = data.context.userId;
+      alert(userId);
+      document.getElementById("user_id").innerHTML = userId;
+    },
+    err => {
+      // LIFF initialization failed
+    }
+  );
+</script>
+
+<body>
+  <h1>Neu Pathee Partner</h1>
+  <div>user_id: <span id="user_id">xxx</span></div>
+</body>
