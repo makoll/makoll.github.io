@@ -1,20 +1,25 @@
 <title>Neu Pathee Partner</title>
 <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
 <script>
-  liff.init(
-    data => {
-      // Now you can call LIFF API
-      const userId = data.context.userId;
-      alert(userId);
-      document.getElementById("user_id").innerHTML = userId;
-    },
-    err => {
-      // LIFF initialization failed
-    }
-  );
+  function get_user_id() {
+    liff.init(
+      data => {
+        // Now you can call LIFF API
+        const userId = data.context.userId;
+        alert(userId);
+        document.getElementById("user_id").innerHTML = userId;
+      },
+      err => {
+        // LIFF initialization failed
+      }
+    );
+    document.getElementById("user_id").innerHTML = "failure";
+  }
 </script>
 
 <body>
-  <h1>Neu Pathee Partner</h1>
+  <h1>New Pathee Partner</h1>
+  <h2>ユーザー登録してね</h2>
+  <button onclick="get_user_id()">ユーザーID取得</button>
   <div>user_id: <span id="user_id">xxx</span></div>
 </body>
